@@ -17,7 +17,7 @@ document.body.appendChild( renderer.domElement );
 
 //glb loader
 const loader = new GLTFLoader();
-loader.load('./public/car.glb', function(gltf){
+loader.load('/car.glb', function(gltf){
   scene.add(gltf.scene);
   gltf.scene.position.y = 0.5;
   gltf.scene.position.x = 5;
@@ -61,7 +61,7 @@ scene.add( cube );
 // create the inner cube (for the picture)
 const innerGeometry = new THREE.PlaneGeometry(1, 0.5); // Adjust size as needed
 const innerMaterial = new THREE.MeshBasicMaterial({
-  map: textureLoader.load('./public/me.jpg'), // Replace with your image path
+  map: textureLoader.load('/me.jpg'), // Replace with your image path
 
 });
 const innerCube = new THREE.Mesh(innerGeometry, innerMaterial);
@@ -77,8 +77,8 @@ scene.add( door );
 
 
 //add 
-const baseTexture = textureLoader.load('./public/roof_base.jpg'); // Base color texture
-const roughnessTexture = textureLoader.load('./public/roof_rough.jpg'); // Roughness map
+const baseTexture = textureLoader.load('/roof_base.jpg'); // Base color texture
+const roughnessTexture = textureLoader.load('/roof_rough.jpg'); // Roughness map
 const coneGeometry = new THREE.ConeGeometry( 2.9, 1, 4); 
 const coneMaterial = new THREE.MeshStandardMaterial( 
   {map: baseTexture,
